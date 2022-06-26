@@ -6,13 +6,13 @@ import { IQRCodePayload } from '../library/IQRCodePayload';
 
 const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     const { navigation } = props;
-    const payload: IQRCodePayload = { name: 'Cool Person', number: '1-234-567-8900' };
+    const payload: IQRCodePayload = { name: 'MADDIE IS A LOOSER', number: '6969696969' };
 
     return (
         <View style={styles.container}>
-            {/* <QRCode value={JSON.stringify(payload)} /> */}
+            <QRCode value={JSON.stringify(payload)} />
             <View style={styles.button}>
-                <Button title="Go to ScannersS" onPress={() => navigation.navigate('Scan')} />
+                <Button title="Go to Scanners" onPress={() => navigation.navigate('Scan')} />
             </View>
         </View>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, StyleSheet, View, Text } from 'react-native';
 import { IStackScreenProps } from '../library/IStackScreenProps';
-import {MyReactNativeForm} from '/Users/marshalwelgama/Documents/Projects/QR-Loyalty/qr-loyalty/components/loginForm'
+import {MyReactNativeForm} from "../components/loginForm"
 
 const LoginPage: React.FunctionComponent<IStackScreenProps> = (props) => {
     const { navigation } = props;
@@ -14,7 +14,7 @@ const LoginPage: React.FunctionComponent<IStackScreenProps> = (props) => {
             {/* formik login page */}
             <MyReactNativeForm />
             <View style={styles.button}>
-            <Button title="Press to naviagate" onPress={navigateToQR} />
+            <Button title="Skip to logged in" onPress={navigateToQR} />
             </View>
         </View>
     );

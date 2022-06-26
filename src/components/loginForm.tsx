@@ -4,8 +4,8 @@ import { Button, TextInput, View, Text } from "react-native";
 import { Formik, FormikProps, Form } from "formik";
 
 interface MyFormValues {
-  firstName: string;
-  lastName: string;
+  fullName: string;
+  mobile: string;
   email: string;
   password: string;
 }
@@ -44,8 +44,8 @@ const InputField: React.FC<Label & any> = ({
 export const MyReactNativeForm: React.FC<{}> = () => {
   //can do a map, add props to fill up initial values, then set the login based on this maybe? 
   const initialValues: MyFormValues = {
-    firstName: "",
-    lastName: "",
+    fullName: "",
+    mobile: "",
     email: "",
     password: "",
   };
@@ -59,25 +59,27 @@ export const MyReactNativeForm: React.FC<{}> = () => {
         {(props: FormikProps<MyFormValues>) => (
           <View>
             <InputField
-            label="label1"
-              placeholder="First Name"
-              onChangeText={props.handleChange("firstName")}
+            label="Full Name"
+              placeholder="Full Name"
+              onChangeText={props.handleChange("fullName")}
             />
             <InputField
-             label="label2"
-              placeholder="Last Name"
-              onChangeText={props.handleChange("lastName")}
+             label="Mobile"
+              placeholder="Mobile"
+              onChangeText={props.handleChange("mobile")}
             />
             <InputField
+            label="Email"
               placeholder="Email Name"
               onChangeText={props.handleChange("email")}
             />
             <InputField
+            label="Password"
               placeholder="Password"
               password
               onChangeText={props.handleChange("password")}
             />
-            <Button title="submit" onPress={() => props.handleSubmit()} />
+            <Button title="Sign Up" onPress={() => props.handleSubmit()} />
           </View>
         )}
       </Formik>
