@@ -86,17 +86,17 @@ const ScanScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
             }
           }}
         >
-            <View style={styles.buttonGroupExit}>
+          <View style={styles.buttonGroupExit}>
             <TouchableOpacity style={styles.exit}>
-            <Icon name={"x"} size={30} color="#404040" />
-          </TouchableOpacity>
-            </View>
+              <Icon name={"x"} size={30} color="#404040" />
+            </TouchableOpacity>
+          </View>
 
-            <View style={styles.buttonGroupTorch}>
+          <View style={styles.buttonGroupTorch}>
             <TouchableOpacity style={styles.exit}>
-            <Icon name={"sun"} size={30} color="#404040" />
-          </TouchableOpacity>
-            </View>
+              <Icon name={"sun"} size={30} color="#404040" />
+            </TouchableOpacity>
+          </View>
 
           <View style={styles.topright}></View>
           <View style={styles.topleft}></View>
@@ -212,11 +212,11 @@ const styles = StyleSheet.create({
   buttonGroupExit: {
     position: "absolute",
     top: height * 0.05,
-    left: width * 0.10,
+    left: width * 0.1,
   },
   buttonGroupTorch: {
     position: "absolute",
     top: height * 0.05,
-    right: width * 0.10,
+    right: width * 0.1,
   },
 });
