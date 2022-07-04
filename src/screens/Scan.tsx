@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import Icon from "react-native-vector-icons/Feather";
 import {
   Text,
   StyleSheet,
@@ -7,7 +8,9 @@ import {
   View,
   Dimensions,
   StatusBar,
+  TouchableOpacity,
 } from "react-native";
+
 import { IStackScreenProps } from "../library/IStackScreenProps";
 import { IQRCodePayload } from "../library/IQRCodePayload";
 
@@ -83,11 +86,18 @@ const ScanScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
             }
           }}
         >
-            {/* <Button title="Go to Scanners" onPress={() => navigation.navigate('QRCode')} /> 
-            
-            USE THIS PART HERE TO MAKE A EXIT BUTTON WHICH RETURNS BACK TO THE QR CODE HOME PAGE
-            
-            */}
+            <View style={styles.buttonGroupExit}>
+            <TouchableOpacity style={styles.exit}>
+            <Icon name={"x"} size={30} color="#404040" />
+          </TouchableOpacity>
+            </View>
+
+            <View style={styles.buttonGroupTorch}>
+            <TouchableOpacity style={styles.exit}>
+            <Icon name={"sun"} size={30} color="#404040" />
+          </TouchableOpacity>
+            </View>
+
           <View style={styles.topright}></View>
           <View style={styles.topleft}></View>
           <View style={styles.bottomright}></View>
@@ -108,6 +118,8 @@ const ScanScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
 export default ScanScreen;
 
 var { height, width } = Dimensions.get("window");
+const top = width / Math.sqrt(8) - height;
+const left = -(width / Math.sqrt(8) - height / 2);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -186,5 +198,25 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
     backgroundColor: "#f5f5f5",
+  },
+  exit: {
+    borderWidth: 1,
+    borderColor: "rgba(0,0,0,0.2)",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 50,
+    height: 50,
+    backgroundColor: "#f5f5f5",
+    borderRadius: 50,
+  },
+  buttonGroupExit: {
+    position: "absolute",
+    top: height * 0.05,
+    left: width * 0.10,
+  },
+  buttonGroupTorch: {
+    position: "absolute",
+    top: height * 0.05,
+    right: width * 0.10,
   },
 });
