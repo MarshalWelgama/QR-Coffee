@@ -1,9 +1,11 @@
 import React from "react";
-import { Button, StyleSheet, View, Text } from "react-native";
+import { Button, StyleSheet, View, Text, ScrollView } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import { IStackScreenProps } from "../library/IStackScreenProps";
 import { IQRCodePayload } from "../library/IQRCodePayload";
-import { Card } from "react-native-shadow-cards";
+import { TextDivider } from "../components/TextDivider";
+
+
 
 const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     const { navigation } = props;
@@ -13,21 +15,29 @@ const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     };
 
     return (
-        <View style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
 
 
-            <QRCode value={JSON.stringify(payload)} size={250} />
+            <View style={{ padding: 20 }}><QRCode value={JSON.stringify(payload)} size={250} /></View>
 
-            <View style={styles.button}>
+
+            <TextDivider input="Explore" lineColour="#e3e3e3" ></TextDivider>
+            <View style={{ padding: 20 }}>
+                <Text style={{ color: "#828282" }}>No places near you... </Text>
+
+            </View>
+            <TextDivider input="Loyalty" lineColour="#e3e3e3" ></TextDivider>
+            <View style={{ padding: 20 }}>
+                <Text style={{ color: "#828282" }}>Scan your first card, to view your loyalty </Text>
 
             </View>
 
+            {/*     <Button 
+                 title="Go to Scanners"
+                 onPress={() => navigation.navigate("Scan")} />*/}
 
-            <Button
-                title="Go to Scanners"
-                onPress={() => navigation.navigate("Scan")}
-            />
-        </View>
+        </ScrollView>
+
     );
 };
 
@@ -36,11 +46,8 @@ export default QRCodeScreen;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#f9f9f9",
+        backgroundColor: "white",
         alignItems: "center",
 
-    },
-    button: {
-        marginTop: 10,
     },
 });

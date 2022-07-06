@@ -28,13 +28,12 @@ const HomeStack = () => {
             backgroundColor: "white",
             height: 100
           },
-          headerRight: () => (
-            <TouchableOpacity style={{ marginRight: 24 }} onPress={() => { console.log("when ejected from expo use react native torch") }}>
-              <Icon name={"menu"} size={30} color="#404040" style={{
+          headerLeft: () => (
+            <TouchableOpacity style={{ marginLeft: 24 }} onPress={() => { console.log("when ejected from expo use react native torch") }}>
+              <Icon name={"menu"} size={25} color="#404040" style={{
 
               }} />
-            </TouchableOpacity>),
-          headerLeft: () => (<></>)
+            </TouchableOpacity>)
 
         }} />
         <Stack.Screen name={"Scan"} options={{ headerShown: false }} component={ScanScreen} />
