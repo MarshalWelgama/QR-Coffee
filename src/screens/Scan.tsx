@@ -34,6 +34,7 @@ const ScanScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
 
     useEffect(() => {
         requestCameraPermission();
+
     }, []);
 
     const requestCameraPermission = async () => {
@@ -73,6 +74,7 @@ const ScanScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     if (permission) {
         return (
             <>
+
                 <BarCodeScanner
                     style={[styles.container]}
                     onBarCodeScanned={({ type, data }) => {
@@ -193,7 +195,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         height: height,
         left: 0,
-        top: height - 90,
+        top: height - 230,
         width: width,
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
