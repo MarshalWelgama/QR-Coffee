@@ -14,6 +14,7 @@ import { IStackScreenProps } from "../library/IStackScreenProps";
 import { IQRCodePayload } from "../library/IQRCodePayload";
 import { TextDivider } from "../components/TextDivider";
 import { QRcard } from "../components/QRcard";
+import COLORS from "../const/colors";
 
 const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     const { navigation } = props;
@@ -24,15 +25,15 @@ const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <QRcard name="Marshal Welgama"><QRCode value={JSON.stringify("payload")} size={150} /></QRcard>
+            <QRcard name="Marshal Welgama"><QRCode color={COLORS.dark} value={JSON.stringify("payload")} size={150} /></QRcard>
             <View style={{ padding: 20 }}></View>
-            <TextDivider input="Explore" lineColour="#e3e3e3"></TextDivider>
+            <TextDivider input="Explore" lineColour={COLORS.lightest}></TextDivider>
             <View style={{ padding: 20 }}>
-                <Text style={{ color: "#828282" }}>No places near you... </Text>
+                <Text style={{ color: COLORS.dark }}>No places near you... </Text>
             </View>
-            <TextDivider input="Loyalty" lineColour="#e3e3e3"></TextDivider>
+            <TextDivider input="Loyalty" lineColour={COLORS.lightest}></TextDivider>
             <View style={{ padding: 20 }}>
-                <Text style={{ color: "#828282" }}>
+                <Text style={{ color: COLORS.dark }}>
                     Scan your first card, to view your loyalty{" "}
                 </Text>
             </View>

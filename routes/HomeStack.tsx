@@ -18,7 +18,7 @@ const HomeStack = () => {
 
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name={"Login"} component={LoginPage} />
+        <Stack.Screen name={"Login"} component={LoginPage} options={{ headerShown: false }} />
         <Stack.Screen name={"QRCode"} component={TopNavigator} options={{
           title: "Welcome John Smith",
           headerStyle: {

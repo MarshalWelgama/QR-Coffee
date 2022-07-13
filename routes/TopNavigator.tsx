@@ -6,6 +6,7 @@ import LoginPage from "../src/screens/LoginPage";
 import Scan from "../src/screens/Scan";
 import { StatusBar, SafeAreaView } from "react-native";
 import QRCodeScreen from "../src/screens/QRCode";
+import COLORS from "../src/const/colors";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,9 +17,9 @@ const TopNavigator = () => {
                 tabBarLabelStyle: { fontSize: 16 },
                 tabBarScrollEnabled: false,
                 swipeEnabled: false,
-                tabBarActiveTintColor: "#658D97",
+                tabBarActiveTintColor: COLORS.dark,
                 tabBarIndicatorStyle: {
-                    backgroundColor: "#658D97",
+                    backgroundColor: COLORS.primary,
                     borderTopColor: "white",
                 },
                 tabBarStyle: {
