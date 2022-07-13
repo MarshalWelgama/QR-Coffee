@@ -1,11 +1,21 @@
-import { TouchableHighlight, View, Text, StyleSheet, Dimensions } from "react-native";
+import React from "react";
+import { TouchableHighlight, View, Text, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 const { width, height } = Dimensions.get('screen');
 const cardWidth = width / 2;
 const cardHeight = height / 3 - 20;
 import COLORS from '../const/colors';
 import Icon from "react-native-vector-icons/Feather";
+import QRCode from "react-native-qrcode-svg";
 
-export const Card = ({ data }) => {
+type Props = {
+    name?: string
+    children: React.ReactElement<typeof QRCode>
+};
+
+export const QRcard = ({
+    children,
+    name = "default",
+}: Props) => {
     return (
 
         <TouchableHighlight
@@ -15,11 +25,11 @@ export const Card = ({ data }) => {
             <View style={styles.card}>
                 <View style={{ alignItems: 'center', padding: 20 }}>
                     <View>
-                        {data}
+                        {children}
                     </View>
                 </View>
                 <View style={{ marginHorizontal: 20 }}>
-                    <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{"John Smith"}</Text>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{name}</Text>
                     <Text style={{ fontSize: 14, color: "red", marginTop: 2 }}>
                         {"3242-1232-1232-2312"}
                     </Text>

@@ -13,7 +13,7 @@ import QRCode from "react-native-qrcode-svg";
 import { IStackScreenProps } from "../library/IStackScreenProps";
 import { IQRCodePayload } from "../library/IQRCodePayload";
 import { TextDivider } from "../components/TextDivider";
-import { Card } from "../components/card";
+import { QRcard } from "../components/QRcard";
 
 const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     const { navigation } = props;
@@ -24,8 +24,7 @@ const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Card
-                data={<QRCode value={JSON.stringify("payload")} size={150} />} />
+            <QRcard name="Marshal Welgama"><QRCode value={JSON.stringify("payload")} size={150} /></QRcard>
             <View style={{ padding: 20 }}></View>
             <TextDivider input="Explore" lineColour="#e3e3e3"></TextDivider>
             <View style={{ padding: 20 }}>
