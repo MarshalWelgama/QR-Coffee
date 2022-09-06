@@ -47,7 +47,7 @@ const InputField: React.FC<Label & any> = ({
   );
 };
 
-export const MyReactNativeForm: React.FC<{}> = () => {
+export const LoginForm: React.FC<{}> = () => {
   //can do a map, add props to fill up initial values, then set the login based on this maybe?
   const initialValues: MyFormValues = {
     fullName: "",
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     height: 65,
-    backgroundColor: COLORS.lightest,
+    backgroundColor: COLORS.white,
     flexDirection: "row",
     paddingHorizontal: 15,
     alignItems: 'center',
@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
   google: {
     height: 65,
     backgroundColor: COLORS.white,
+    borderColor: COLORS.lightest,
     flexDirection: "row",
     paddingHorizontal: 15,
     alignItems: 'center',

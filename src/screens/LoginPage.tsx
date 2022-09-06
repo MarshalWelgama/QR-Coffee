@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, StyleSheet, View, Text } from "react-native";
 import { IStackScreenProps } from "../library/IStackScreenProps";
-import { MyReactNativeForm } from "../components/loginForm";
+import { LoginForm } from "../components/loginForm";
 import COLORS from "../const/colors";
 
 const LoginPage: React.FunctionComponent<IStackScreenProps> = (props) => {
@@ -16,10 +16,8 @@ const LoginPage: React.FunctionComponent<IStackScreenProps> = (props) => {
                 <Text style={styles.loginMain}>Welcome Back!</Text>
                 <Text style={styles.loginSubtitle}>Please sign in to your account</Text>
             </View>
-
-
             {/* formik login page */}
-            <MyReactNativeForm />
+            <LoginForm />
             <View style={styles.debug}>
                 <Button title="Skip to logged in" onPress={navigateToQR} />
             </View>
