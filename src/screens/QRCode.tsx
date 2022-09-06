@@ -15,6 +15,7 @@ import { IQRCodePayload } from "../library/IQRCodePayload";
 import { TextDivider } from "../components/TextDivider";
 import { QRcard } from "../components/QRcard";
 import COLORS from "../const/colors";
+import { CardSlider } from "../components/cards/CardSlider";
 
 const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     const { navigation } = props;
@@ -23,14 +24,43 @@ const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
         number: "6969696969",
     };
 
+    const cardsData = [
+        {
+            id: 1,
+            name: "Aaa",
+            address: "Otira Road",
+        },
+        {
+            id: 2,
+            name: "bbb",
+            address: "Otira Road",
+        },
+        {
+            id: 3,
+            name: "ccc",
+            address: "Otira Road",
+        },
+    ];
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <QRcard name="Marshal Welgama"><QRCode color={COLORS.dark} value={JSON.stringify("payload")} size={150} /></QRcard>
+            <QRcard name="Marshal Welgama">
+                <QRCode
+                    color={COLORS.dark}
+                    value={JSON.stringify("payload")}
+                    size={150}
+                />
+            </QRcard>
             <View style={{ padding: 20 }}></View>
             <TextDivider input="Explore" lineColour={COLORS.lightest}></TextDivider>
-            <View style={{ padding: 20 }}>
-                <Text style={{ color: COLORS.dark }}>No places near you... </Text>
-            </View>
+            {cardsData.length ?
+                <CardSlider data={cardsData} />
+                :
+                <View style={{ padding: 20 }}>
+                    <Text style={{ color: COLORS.dark }}>No places near you... </Text>
+                </View>
+            }
+
             <TextDivider input="Loyalty" lineColour={COLORS.lightest}></TextDivider>
             <View style={{ padding: 20 }}>
                 <Text style={{ color: COLORS.dark }}>
