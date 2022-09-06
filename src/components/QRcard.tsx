@@ -29,8 +29,8 @@ export const QRcard = ({
                     </View>
                 </View>
                 <View style={{ marginHorizontal: 20 }}>
-                    <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{name}</Text>
-                    <Text style={{ fontSize: 14, color: "red", marginTop: 2 }}>
+                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: COLORS.dark }}>{name}</Text>
+                    <Text style={{ fontSize: 14, color: COLORS.primary, marginTop: 2 }}>
                         {"3242-1232-1232-2312"}
                     </Text>
                 </View>
@@ -40,7 +40,7 @@ export const QRcard = ({
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                     }}>
-                    <Text style={{ fontSize: 18 }}>
+                    <Text style={{ fontSize: 18, color: COLORS.dark }}>
                         last time scanned: 04/02/22
                     </Text>
                     <View style={styles.infobtn}>
