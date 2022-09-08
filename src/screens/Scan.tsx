@@ -203,12 +203,12 @@ const styles = StyleSheet.create({
     },
     exit: {
         borderWidth: 1,
-        borderColor: "rgba(0,0,0,0.2)",
+        borderColor: 'white',
         alignItems: "center",
         justifyContent: "center",
         width: 50,
         height: 50,
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "white",
         borderRadius: 50,
     },
     buttonGroupExit: {

@@ -15,6 +15,18 @@ export interface CardProps {
 
 }
 
+export interface LoyaltyProps {
+    id: number,
+    name: string
+    logo: ImageSourcePropType,
+    pointMax: number,
+    pointCurrent: number,
+}
+
 export interface CardSliderProps {
     data: Array<CardProps>
+}
+
+export interface LoyaltySliderProps {
+    data: Array<LoyaltyProps>
 }
