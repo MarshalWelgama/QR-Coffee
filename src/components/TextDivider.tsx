@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, TextInput, View, Text } from "react-native";
+import COLORS from "../const/colors";
 
 interface data {
     input: string
@@ -19,8 +20,8 @@ export const TextDivider: React.FC<data & any> = ({
         //     <View style={{ flex: 1, height: 1, backgroundColor: `${lineColour}` }} />
         // </View>
 
-        <View style={{ flexDirection: 'row' }}>
-            <Text style={{ alignSelf: "auto", marginLeft: 10, paddingHorizontal: 16, fontSize: 16 }}>{input}</Text>
+        <View style={{ flexDirection: 'row', paddingBottom: 15, paddingTop: 5 }}>
+            <Text style={{ alignSelf: "auto", paddingHorizontal: 16, fontSize: 22, fontWeight: 'bold', color: COLORS.dark }}>{input}</Text>
             <View style={{ backgroundColor: `${lineColour}`, marginTop: 2, height: 1, flex: 1, alignSelf: 'center' }} />
         </View>
     )
