@@ -4,7 +4,14 @@ export interface CardProps {
     id: number,
     name: string
     address: string
-    // logo: ImageSourcePropType
+    contact: string
+    display: ImageSourcePropType,
+    distance: string
+    open: boolean,
+    openTime: string,
+    closeTime: string,
+    tags?: Array<string>,
+
 
 }
 

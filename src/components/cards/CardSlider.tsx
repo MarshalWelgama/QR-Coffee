@@ -5,8 +5,7 @@ import { CardItem } from "./CardItem";
 const CardList = styled.FlatList`
     width: 100%;
     flex: 1;
-    padding-left: 25px;
-    padding-bottom: 15px;
+
 
 `
 
@@ -21,7 +20,8 @@ export const CardSlider: FunctionComponent<CardSliderProps> = (props) => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{
                 paddingRight: 25,
-                alignItems: "center"
+                paddingBottom: 20
+
             }}
             keyExtractor={({ id }: any) => id.toString()}
             renderItem={({ item }: any) => <CardItem {...item} />}

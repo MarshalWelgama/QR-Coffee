@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
-import { View, StyleSheet, Dimensions, Text } from "react-native";
+import { View, StyleSheet, Dimensions, Text, Image, TouchableHighlight } from "react-native";
 import styled from "styled-components/native"
 import COLORS from "../../const/colors";
 const { width, height } = Dimensions.get('screen');
-const cardWidth = width / 1.5;
-const cardHeight = height / 4 - 20;
+const cardWidth = width * 0.8; //1.25
+const cardHeight = height * 0.36; //2.6
 
 // const CardBackground = styled.ImageBackground`
 //     height: 75%;
@@ -12,23 +12,24 @@ const cardHeight = height / 4 - 20;
 // `
 //types
 
-const CardTouchable = styled.TouchableHighlight`
+const CardTouchable = styled.View`
     height: 100%
-    border-radius: 25px;
+    border-radius: 15px;
 `
 
 const TouchableView = styled.View`
     justify-content: space-between;
-    align-items: center;
-    padding: 30px
     flex: 1;
+    paddingTop: 5px;
+    marginVertical: 10px
+    marginHorizontal: 15px
+    
 `
 const CardRow = styled.View`
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    width: 100%
-`;
+    width: 100%`;
+
 
 import { CardProps } from "./types";
 
@@ -38,12 +39,26 @@ export const CardItem: FunctionComponent<CardProps> = (props) => {
     }
     return (
         <View style={styles.card}>
-            <CardTouchable underlayColor={COLORS.lightest} onPress={() => handlePress}>
+            <CardTouchable>
                 <TouchableView>
 
-                    <Text>{props.id}</Text>
+                    <Image style={styles.image} source={props.display} />
+                    <CardRow>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold', color: COLORS.dark }}>{props.name}</Text>
+                    </CardRow>
+                    <CardRow >
+                        {props.tags?.map((value) => {
+                            return <View style={styles.tagContainer}><Text>{value}</Text></View>
+                        })}
+                        <View style={styles.tagContainer}>{props.open ? <Text>{props.openTime} - {props.closeTime}</Text> : <Text>Closed</Text>}</View>
+                    </CardRow>
+                    <CardRow style={{ justifyContent: 'space-between' }} >
+                        <TouchableHighlight underlayColor={COLORS.almostWhite} onPress={() => handlePress} style={styles.ctaContainer}><Text>Call</Text></TouchableHighlight>
 
-                    <Text>{props.name}</Text>
+                        <TouchableHighlight underlayColor={COLORS.almostWhite} onPress={() => handlePress} style={styles.ctaContainer}><Text>Maps</Text></TouchableHighlight>
+                    </CardRow>
+
+
 
                 </TouchableView>
             </CardTouchable>
@@ -59,14 +74,48 @@ const styles = StyleSheet.create({
         width: cardWidth,
         marginHorizontal: 10,
         borderRadius: 15,
-        elevation: 13,
-        shadowOffset: {
-            width: 0,
-            height: 5, // for iOS
-        },
-        shadowRadius: 5,
-        shadowOpacity: 0.1,
+        // elevation: 5,
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 2, // for iOS
+        // },
+        // shadowRadius: 2,
+        // shadowOpacity: 0.1,
         backgroundColor: COLORS.white,
+        borderColor: COLORS.lightest,
+        borderWidth: 0.5
+
     },
+    image: {
+        height: (height / 4) * 0.9,
+        width: (width / 1.25) * 0.9,
+        alignSelf: 'center'
+    },
+    tagContainer: {
+        height: 25,
+        backgroundColor: COLORS.white,
+        flexDirection: "row",
+        paddingHorizontal: 15,
+        alignItems: 'center',
+
+        borderRadius: 5,
+        borderColor: COLORS.light,
+        borderWidth: 0.5,
+        marginBottom: 5,
+        marginRight: 5
+
+    },
+    ctaContainer: {
+        height: 35,
+        width: '48%',
+        backgroundColor: COLORS.white,
+        flexDirection: "row",
+        paddingHorizontal: 15,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 5,
+        borderColor: COLORS.light,
+        borderWidth: 0.5,
+    }
 })
 

@@ -6,6 +6,7 @@ const COLORS = {
   secondary: "#D9C8C0",
   light: "#DAD8D9",
   lightest: "#E9E3E3",
+  almostWhite: "#F8F9FA",
 };
 
 export default COLORS;
