@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width * 0.05,
         borderRadius: Math.round((Dimensions.get('window').height + Dimensions.get('window').width) / 2),
         backgroundColor: COLORS.almostWhite,
-        borderColor: COLORS.primary,
+        borderColor: COLORS.gradientA,
         borderWidth: Dimensions.get('window').width * 0.003,
         marginHorizontal: 2
     },
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
         height: Dimensions.get('window').width * 0.05,
         width: Dimensions.get('window').width * 0.05,
         borderRadius: Math.round((Dimensions.get('window').height + Dimensions.get('window').width) / 2),
-        backgroundColor: COLORS.primary,
+        backgroundColor: COLORS.gradientB,
         marginHorizontal: 2
     },
     points: {

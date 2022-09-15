@@ -104,11 +104,11 @@ const ScanScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
                     <View style={styles.topleft}></View>
                     <View style={styles.bottomright}></View>
                     <View style={styles.bottomleft}></View>
-                    <View style={styles.bottombox}>
+                    {/* <View style={styles.bottombox}>
                         <Text style={styles.infotext}>
                             Bring QR into the box and hold steady.
                         </Text>
-                    </View>
+                    </View> */}
                 </BarCodeScanner>
             </>
         );
@@ -136,9 +136,8 @@ const styles = StyleSheet.create({
         flex: 1,
         textAlign: "center",
         fontSize: 18,
-
         color: "#404040",
-        marginTop: 30,
+        marginTop: 20,
     },
     textError: {
         color: "red",
@@ -193,12 +192,10 @@ const styles = StyleSheet.create({
     },
     bottombox: {
         position: "absolute",
-        height: height,
-        left: 0,
-        top: height - 230,
-        width: width,
-        borderTopRightRadius: 30,
-        borderTopLeftRadius: 30,
+        height: height - 870,
+        top: height - 320,
+        width: width - 60,
+        borderRadius: 30,
         backgroundColor: "#f5f5f5",
     },
     exit: {

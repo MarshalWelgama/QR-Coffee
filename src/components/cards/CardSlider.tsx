@@ -20,7 +20,8 @@ export const CardSlider: FunctionComponent<CardSliderProps> = (props) => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{
                 paddingRight: 25,
-                paddingBottom: 20
+                paddingBottom: 20,
+                marginBottom: 20
 
             }}
             keyExtractor={({ id }: any) => id.toString()}

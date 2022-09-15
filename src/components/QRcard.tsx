@@ -30,7 +30,7 @@ export const QRcard = ({
                 </View>
                 <View style={{ marginHorizontal: 20 }}>
                     <Text style={{ fontSize: 18, fontWeight: 'bold', color: COLORS.dark }}>{name}</Text>
-                    <Text style={{ fontSize: 14, color: COLORS.primary, marginTop: 2 }}>
+                    <Text style={{ fontSize: 14, color: COLORS.gradientA, marginTop: 2 }}>
                         {"3242-1232-1232-2312"}
                     </Text>
                 </View>
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
         height: cardHeight,
         width: cardWidth,
         marginHorizontal: 10,
-        marginBottom: 20,
         marginTop: 30,
         borderRadius: 15,
         elevation: 13,
@@ -68,12 +67,14 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         shadowOpacity: 0.1,
         backgroundColor: COLORS.white,
+        bottom: 70,
+        marginBottom: -50
     },
     infobtn: {
         height: 20,
         width: 20,
         borderRadius: 20,
-        backgroundColor: COLORS.primary,
+        backgroundColor: COLORS.gradientA,
         justifyContent: 'center',
         alignItems: 'center',
     },

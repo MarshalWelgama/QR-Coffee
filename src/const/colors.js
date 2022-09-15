@@ -7,6 +7,9 @@ const COLORS = {
   light: "#DAD8D9",
   lightest: "#E9E3E3",
   almostWhite: "#F8F9FA",
+  gradientA: "#3F7980",
+  gradientB: "#2C5364",
+  unFocus: "#abbabf",
 };
 
 export default COLORS;

@@ -20,7 +20,8 @@ export const LoyaltySlider: FunctionComponent<LoyaltySliderProps> = (props) => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{
                 paddingRight: 25,
-                paddingBottom: 20
+                paddingBottom: 20,
+                marginBottom: 15
 
             }}
             keyExtractor={({ id }: any) => id.toString()}

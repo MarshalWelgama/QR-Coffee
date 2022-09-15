@@ -26,7 +26,7 @@ const omarlogo = require("../mock/images/omarLogo.jpeg");
 
 const windowHeight = Dimensions.get("window").height;
 
-const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
+const Recent: React.FunctionComponent<IStackScreenProps> = (props) => {
     const { navigation } = props;
     const payload: IQRCodePayload = {
         name: "MADDIE IS A LOOSER",
@@ -117,7 +117,7 @@ const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
             </QRcard>
 
             <TextDivider
-                input="Explore Near You"
+                input="Recent Loyalty Cards"
                 lineColour={COLORS.lightest}
             ></TextDivider>
             {cardsData.length ? (
@@ -139,7 +139,7 @@ const QRCodeScreen: React.FunctionComponent<IStackScreenProps> = (props) => {
     );
 };
 
-export default QRCodeScreen;
+export default Recent;
 
 const styles = StyleSheet.create({
     container: {

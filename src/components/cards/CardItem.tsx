@@ -45,6 +45,7 @@ export const CardItem: FunctionComponent<CardProps> = (props) => {
                     <Image style={styles.image} source={props.display} />
                     <CardRow>
                         <Text style={{ fontSize: 16, fontWeight: 'bold', color: COLORS.dark }}>{props.name}</Text>
+                        <Text style={{ color: COLORS.dark, paddingStart: 5 }}>3.4km</Text>
                     </CardRow>
                     <CardRow >
                         {props.tags?.map((value) => {
