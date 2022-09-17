@@ -2,17 +2,27 @@ import { ImageSourcePropType } from "react-native"
 
 export interface CardProps {
     id: number,
-    name: string
-    address: string
-    contact: string
+    name: string,
+    address: string,
+    contact: string,
     display: ImageSourcePropType,
-    distance: string
+    distance: string,
     open: boolean,
     openTime: string,
     closeTime: string,
     tags?: Array<string>,
+}
 
-
+export interface recentCardProps {
+    id: number,
+    name: string,
+    logo: ImageSourcePropType,
+    pointMax: number,
+    pointCurrent: number,
+    address: string,
+    contact: string,
+    recentTimeStamp: string,
+    visits: number
 }
 
 export interface LoyaltyProps {

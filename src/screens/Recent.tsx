@@ -23,6 +23,7 @@ const marketlane = require("../mock/images/marketlane.jpeg");
 const omarcoffee = require("../mock/images/omarcoffee.jpeg");
 const neverregular = require("../mock/images/neverregular.jpeg");
 const omarlogo = require("../mock/images/omarLogo.jpeg");
+import { RecentCardItem } from "../components/recentCard/RecentCardItem";
 
 const windowHeight = Dimensions.get("window").height;
 
@@ -33,53 +34,20 @@ const Recent: React.FunctionComponent<IStackScreenProps> = (props) => {
         number: "6969696969",
     };
 
-    const cardsData = [
-        {
-            id: 1,
-            name: "Omar Coffee Bird",
-            address: "Otira Road",
-            contact: "0420000000",
-            display: omarcoffee,
-            tags: ["Coffee", "Brunch", "Vibes"],
-            distance: "3km",
-            open: true,
-            openTime: "9am",
-            closeTime: "5pm",
-        },
-        {
-            id: 2,
-            name: "Never Regular",
-            address: "Otira Road",
-            contact: "0420000000",
-            display: neverregular,
-            tags: ["Garden", "Breakfast", "Music"],
-            distance: "5km",
-            open: true,
-            openTime: "9am",
-            closeTime: "2pm",
-        },
-        {
-            id: 3,
-            name: "Market Lane",
-            address: "Otira Road",
-            contact: "0420000000",
-            display: marketlane,
-            tags: ["Coffee", "Take-Away"],
-            distance: "10km",
-            open: false,
-            openTime: "9am",
-            closeTime: "5pm",
-        },
-    ];
-    const loyaltyData = [
-        {
-            id: 1,
-            name: "Omar Coffee Bird",
-            logo: omarlogo,
-            pointMax: 5,
-            pointCurrent: 2,
-        },
-    ];
+    const cardsData =
+    {
+        id: 1,
+        name: "Market Lane",
+        logo: omarlogo,
+        pointMax: 5,
+        pointCurrent: 2,
+        address: "22 Otira Road Knoxfield 3180",
+        contact: "04000000000",
+        recentTimeStamp: "13948319282",
+        visits: 32
+
+    }
+
 
     return (
         <ScrollView
@@ -119,22 +87,11 @@ const Recent: React.FunctionComponent<IStackScreenProps> = (props) => {
             <TextDivider
                 input="Recent Loyalty Cards"
                 lineColour={COLORS.lightest}
-            ></TextDivider>
-            {cardsData.length ? (
-                <>
-                    <CardSlider data={cardsData} />
-                </>
-            ) : (
-                <View style={{ padding: 20 }}>
-                    <Text style={{ color: COLORS.dark }}>No places near you... </Text>
-                </View>
-            )}
+            />
+            <RecentCardItem {...cardsData} />
 
-            <TextDivider input="Loyalty" lineColour={COLORS.lightest}></TextDivider>
 
-            <LoyaltySlider data={loyaltyData} />
 
-            <View style={{ marginBottom: 100 }} />
         </ScrollView>
     );
 };
